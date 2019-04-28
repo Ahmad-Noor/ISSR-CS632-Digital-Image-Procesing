@@ -1,3 +1,3 @@
-# ISSR-CS632-ImageProcesing 2019
+# ISSR CS632 Digital image processing 2019
 # Dr.Ahmed Hamza.
-Apply on matlab 2016.
+Apply on MATLAB R2016b.
