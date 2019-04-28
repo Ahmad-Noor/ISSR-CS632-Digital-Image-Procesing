@@ -1,6 +1,3 @@
-# ISSR-CS632-ImageProcesing
-ISSR CS632 ImageProcesing 2019
-matlab code
-
-Dr.Ahmed Hamza
-
+# ISSR-CS632-ImageProcesing 2019
+# Dr.Ahmed Hamza.
+Apply on matlab 2016.
