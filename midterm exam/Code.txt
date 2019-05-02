@@ -1,0 +1,31 @@
+a = imread('D:\issr\CS 632\1.tif');
+subplot(1,4,1),imshow(a);title('Orignal');
+
+b=locallapfilt(a,0.4, 0.5);
+ 
+c=imadd(a,b);
+  
+d=a;
+C=double(a);
+for i=1:size(C,1)-2
+    for j=1:size(C,2)-2
+        %Sobel mask for x-direction:
+        Gx=((2*C(i+2,j+1)+C(i+2,j)+C(i+2,j+2))-(2*C(i,j+1)+C(i,j)+C(i,j+2)));
+        %Sobel mask for y-direction:
+        Gy=((2*C(i+1,j+2)+C(i,j+2)+C(i+2,j+2))-(2*C(i+1,j)+C(i,j)+C(i+2,j)));
+      
+        %The gradient of the image
+        %B(i,j)=abs(Gx)+abs(Gy);
+        d(i,j)=sqrt(Gx.^2+Gy.^2);
+      
+    end
+end
+ %figure,imshow(d); title('Sobel gradient');
+ 
+ e=imboxfilt(d,5, 'NormalizationFactor',1);
+ 
+  
+f=immultiply(double(c),double(e));
+ g=imadd(double(a),f);
+
+  subplot(1,2,2),imshow(g,[]);title('Desird image');
